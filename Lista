@@ -1,0 +1,39 @@
+nome_Lista = []
+cancela = "0"
+opcao = 0
+while cancela == '0':
+    print("1 - Adicionar nome\n2 - Remover nome\n3 - Pesquisar nome\n4 - exibir lista\n5 - cancelar consulta")
+    opcao = input("Oque deseja?\n")
+
+    if opcao == "1":
+        nome_Adicao = input("Nome a adicionar\n").upper()
+        nome_Lista.append(nome_Adicao)
+        print(f"O {nome_Adicao} foi adicionado na lista!")
+
+    if opcao == "2":
+        nome_Remocao = input("Nome a Remover\n").upper()
+
+        if nome_Remocao not in nome_Lista:
+            print("O nome a remover não se1 encontra na lista\nVocê sera redirecionado para o inicio da solicitação.")
+        else:
+            nome_Lista.remove(nome_Remocao)
+            print(f"O {nome_Remocao} foi removido na lista!")
+
+    if opcao == "3":
+        nome_Usuario = input("Qual o nome?\n").upper()
+        if (nome_Usuario not in nome_Lista):
+            print("O nome não está na lista")
+
+        else:
+            print(f"O nome de {nome_Usuario} está na lista!!")
+
+    if opcao == "4":
+        print(f"|{nome_Lista}|")
+
+    if opcao == "5":
+        print("Você cancelou a consulta")
+        print("Obrigado por utilizar meu código!")
+        cancela = '1'
+    
+else:
+    print("Fim da execução")
